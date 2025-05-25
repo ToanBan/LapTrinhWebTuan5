@@ -1,0 +1,90 @@
+﻿@model List<WebBanStore.Models.Book>
+
+
+
+<style>
+    .sidebar {
+        background: #f8f9fa;
+        min-height: 100vh;
+        padding-top: 20px;
+        border-right: 1px solid #dee2e6;
+    }
+
+        .sidebar h4 {
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .sidebar .nav-link:hover {
+            color: #0d6efd;
+        }
+
+    .book-card .card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+        .book-card .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+    .card-img-top {
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav class="col-md-3 sidebar">
+            <h4><i class="bi bi-bookmarks"></i> Thể loại</h4>
+            <ul class="nav flex-column">
+                @foreach (var category in ViewBag.Categories)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-tag"></i> @category.CategoryName (@category.BookCount)
+                        </a>
+                    </li>
+                }
+            </ul>
+
+        </nav>
+
+        <!-- Main Content -->
+        <main class="col-md-9 py-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="fw-bold">📚 Danh sách Sách</h2>
+                <a class="btn btn-outline-primary" href="/book/create"><i class="bi bi-plus-circle"></i> Thêm Mới</a>
+            </div>
+
+            <div class="row">
+                @foreach (var book in Model)
+                {
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4 book-card">
+                        <div class="card h-100">
+                            <img src="@book.Image" class="card-img-top" alt="@book.Title" style="height: 300px; object-fit: cover;">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">@book.Title</h5>
+                                <p class="card-text text-muted">Tác giả: @book.Author</p>
+                                <span class="badge bg-secondary mb-2">Thể loại: @book.Category?.CategoryName</span>
+
+                                <div class="mt-auto d-flex justify-content-between">
+                                    <a href="/Book/Display/@book.BookId" class="btn btn-sm btn-outline-info" title="Xem chi tiết"><i class="bi bi-eye"></i>Xem Chi Tiết</a>
+                                    <a href="/Book/Edit/@book.BookId" class="btn btn-sm btn-outline-warning" title="Chỉnh sửa"><i class="bi bi-pencil-square"></i>Edit</a>
+                                    <a href="/Book/Delete/@book.BookId" class="btn btn-sm btn-outline-danger" title="Xóa" onclick="return confirm('Bạn có chắc chắn muốn xóa không?');"><i class="bi bi-trash"></i>DELETE</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </main>
+    </div>
+</div>
+
+
