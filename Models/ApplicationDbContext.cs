@@ -1,15 +1,18 @@
 ﻿namespace WebBanStore.Models
 {
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
 
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext
     {
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
         }
 
 
-        public DbSet<Category> categories { get; set; }
-        public DbSet<Book> books { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Product>Products { get; set; }
+        public DbSet<ProductImage>ProductImages { get; set; }
     }
 }

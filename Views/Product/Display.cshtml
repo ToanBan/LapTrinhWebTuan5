@@ -1,0 +1,58 @@
+﻿@model WebBanStore.Models.Product
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<div class="container my-5">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">@Model.Category?.Name</a></li>
+            <li class="breadcrumb-item active" aria-current="page">@Model.Name</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <!-- Product Image -->
+        <div class="col-md-6 d-flex justify-content-center align-items-center">
+            <img src="@Model.ImageUrl" alt="@Model.Name" class="img-fluid rounded" style="max-height: 400px;" />
+        </div>
+
+        <!-- Product Details -->
+        <div class="col-md-6">
+            <h2 class="fw-bold">@Model.Name</h2>
+            <h4 class="text-primary mb-3">@Model.Price.ToString("C")</h4>
+
+            <p class="text-muted">@Model.Description</p>
+
+            <form method="post" action="/Cart/AddToCart">
+                <input type="hidden" name="productId" value="@Model.Id" />
+                <div class="d-flex align-items-center mb-3">
+                    <button type="button" class="btn btn-outline-secondary" onclick="changeQuantity(-1)">−</button>
+                    <input type="number" name="quantity" value="1" min="1" id="quantityInput"
+                           class="form-control mx-2 text-center" style="width: 80px;" />
+                    <button type="button" class="btn btn-outline-secondary" onclick="changeQuantity(1)">+</button>
+                </div>
+                <button type="submit" class="btn btn-dark w-100 rounded-pill">Add to cart</button>
+            </form>
+
+            <hr />
+            <p class="text-uppercase text-muted small">
+                Category: <span class="fw-bold">@Model.Category?.Name</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function changeQuantity(delta) {
+            const input = document.getElementById('quantityInput');
+            let value = parseInt(input.value);
+            if (isNaN(value)) value = 1;
+            value += delta;
+            if (value < 1) value = 1;
+            input.value = value;
+        }
+    </script>
+}

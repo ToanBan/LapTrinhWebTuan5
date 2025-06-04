@@ -13,7 +13,7 @@ namespace WebBanStore.Controllers
         }
         public IActionResult Index()
         {
-            List<Category> categories = _context.categories.ToList();
+            List<Category> categories = _context.Categories.ToList();
             return View(categories);
         }
 
@@ -29,10 +29,10 @@ namespace WebBanStore.Controllers
 
             var category = new Category
             {
-                CategoryName = categoryName
+                Name = categoryName
             };
 
-            _context.categories.Add(category);
+            _context.Categories.Add(category);
             _context.SaveChanges(); 
 
             return RedirectToAction("Index");

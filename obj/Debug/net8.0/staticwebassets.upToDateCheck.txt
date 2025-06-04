@@ -1,6 +1,11 @@
 wwwroot\css\site.css
 wwwroot\favicon.ico
-wwwroot\images\dacnhantam.jpg
+wwwroot\images\cuocsong1.jpg
+wwwroot\images\laptrinh2.jpg
+wwwroot\images\nam1.jpg
+wwwroot\images\nu.jpg
+wwwroot\images\nu1.jpg
+wwwroot\images\nu2.jpg
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

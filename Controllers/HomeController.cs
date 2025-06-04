@@ -20,16 +20,8 @@ namespace WebBanStore.Controllers
 
         public IActionResult Index()
         {
-            var categories = _context.categories
-        .Select(c => new
-        {
-            c.CategoryName,
-            BookCount = c.listBook.Count()
-        })
-        .ToList();
-            var books = _context.books.Include(b => b.Category).ToList();
-            ViewBag.Categories = categories;
-            return View(books);
+            var products = _context.Products.ToList();
+            return View(products);
         }
 
         public IActionResult Privacy()
@@ -41,6 +33,24 @@ namespace WebBanStore.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [HttpGet]
+        public IActionResult Search(string query)
+        {
+            if (string.IsNullOrWhiteSpace(query))
+            {
+
+                var allProducts = _context.Products.Include(p => p.Category).ToList();
+                return View("Index", allProducts);
+            }
+
+            var matchedProducts = _context.Products
+                .Include(p => p.Category)
+                .Where(p => p.Name.Contains(query) || p.Description.Contains(query))
+                .ToList();
+
+            return View("Index", matchedProducts);
         }
     }
 }

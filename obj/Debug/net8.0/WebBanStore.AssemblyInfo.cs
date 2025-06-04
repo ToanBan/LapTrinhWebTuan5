@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebBanStore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4efa0d4e7ee5a7c00950e24a394e6c2baa87d176")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebBanStore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebBanStore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

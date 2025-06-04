@@ -13,8 +13,28 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\workspace\\LapTrinhWeb\\WebBanStore\\WebBanStore\\wwwroot\\images\\dacnhantam.jpg",
-      "PackagePath": "staticwebassets\\images\\dacnhantam.jpg"
+      "Id": "D:\\workspace\\LapTrinhWeb\\WebBanStore\\WebBanStore\\wwwroot\\images\\cuocsong1.jpg",
+      "PackagePath": "staticwebassets\\images\\cuocsong1.jpg"
+    },
+    {
+      "Id": "D:\\workspace\\LapTrinhWeb\\WebBanStore\\WebBanStore\\wwwroot\\images\\laptrinh2.jpg",
+      "PackagePath": "staticwebassets\\images\\laptrinh2.jpg"
+    },
+    {
+      "Id": "D:\\workspace\\LapTrinhWeb\\WebBanStore\\WebBanStore\\wwwroot\\images\\nam1.jpg",
+      "PackagePath": "staticwebassets\\images\\nam1.jpg"
+    },
+    {
+      "Id": "D:\\workspace\\LapTrinhWeb\\WebBanStore\\WebBanStore\\wwwroot\\images\\nu.jpg",
+      "PackagePath": "staticwebassets\\images\\nu.jpg"
+    },
+    {
+      "Id": "D:\\workspace\\LapTrinhWeb\\WebBanStore\\WebBanStore\\wwwroot\\images\\nu1.jpg",
+      "PackagePath": "staticwebassets\\images\\nu1.jpg"
+    },
+    {
+      "Id": "D:\\workspace\\LapTrinhWeb\\WebBanStore\\WebBanStore\\wwwroot\\images\\nu2.jpg",
+      "PackagePath": "staticwebassets\\images\\nu2.jpg"
     },
     {
       "Id": "D:\\workspace\\LapTrinhWeb\\WebBanStore\\WebBanStore\\wwwroot\\js\\site.js",
